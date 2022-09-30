@@ -1,54 +1,40 @@
-
-def check_answer(score=0):
-    if x == a:
-        print("CORRECT!")
-        score += 5
-        print()
-    else:
-        play_again()
-
-
-def score():
-    total_score = str(score) + "/20"
-    print(total_score)
-
-
-def play_again():
-    again = input(print("Play again?: Yes/No")).lower()
-
-
-
 def start_game():
-    score = 0
-    which_answer = 0
+    start = None
+    print("Welcome to my quiz game!")
+    while not start == "yes":
+        start = input("Type yes to start: ").lower()
     while True:
-        breakk = 0
-        print("Welcome to my quiz game!")
-        start = input(print("Would you like to start? Yes/No: ")).lower()
-        if not start == "yes":
-            break
+        which_answer = 0
+        score = 0
         for q, a in questions.items():
             x = None
-            if breakk == 1:
-                break
             while x not in potential_answers:
-                if breakk == 1:
-                    break
+                print()
                 print(q)
                 print(answers[which_answer])
                 x = input("Answer? (A, B, C, or D): ").upper()
                 if x == a:
+                    print()
                     print("CORRECT!")
                     score += 5
                     which_answer += 1
+                elif x not in potential_answers:
+                    print()
+                    print("Please choose A, B, C, or D")
                 else:
-                    print("You lose :((((")
-                    breakk = 1
-                    if breakk == 1:
-                        break
+                    print()
+                    print("Incorrect")
+                    which_answer += 1
+        print()
+        print("You have scored: ",end = "")
+        total_score = str(score) + "/20"
+        print(total_score)
 
-        again = input(print("Play again?: Yes/No")).lower()
+        print()
+        again = input("Play again?: Yes/No").lower()
         if not again == "yes":
+            print()
+            print("See you next time!")
             break
 
 questions = {"Who was the first president of the USA?: ": "B",
