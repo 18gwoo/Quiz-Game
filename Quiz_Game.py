@@ -27,11 +27,11 @@ def start_game():
                     which_answer += 1
         print()
         print("You have scored: ",end = "")
-        total_score = str(score) + "/20"
+        total_score = str(score) + "/25"
         print(total_score)
 
         print()
-        again = input("Play again?: Yes/No").lower()
+        again = input("Play again?: Yes/No: ").lower()
         if not again == "yes":
             print()
             print("See you next time!")
@@ -40,13 +40,15 @@ def start_game():
 questions = {"Who was the first president of the USA?: ": "B",
              "How many moons does the earth have?: ": "A",
              "Who was the first man on the moon?: ": "C",
-             "What is the number one cause of death in the USA?: ": "A"
+             "What is the number one cause of death in the USA?: ": "A",
+             "What is the area between North and South Korea called?: ": "D"
              }
 
 answers = [["A. Thomas Jefferson", "B. George Washington", "C. Alexander Hamilton", "Benjamin Franklin"],
            ["A. 1", "B. 2","C. 3","D. 4"],
            ["A. Buzz Aldrin","B. John Glenn","C. Neil Armstrong","D. Alan Shepard" ],
-           ["A. Cardiovascular Disease", "Covid 19", "Medical Malpractice", "Cancer"]]
+           ["A. Cardiovascular Disease", "B. Covid 19", "C. Medical Malpractice", "D. Cancer"],
+           ["A. No mans land", "B. The red zone", "C. The Imjin line", "D. The Demilitarized Zone"]]
 potential_answers = ["A","B","C","D"]
 
 start_game()
